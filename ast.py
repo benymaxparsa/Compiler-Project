@@ -22,7 +22,7 @@ class Sub(BinaryOperator):
         return self.left.eval() - self.right.eval()
 
 
-class Print():
+class Print:
     def __init__(self, value):
         self.value = value
 
