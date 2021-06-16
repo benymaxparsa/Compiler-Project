@@ -13,6 +13,8 @@ class Lexer:
         self.lexer.ignore('\s+')
         self.lexer.add('SUM', r'\+')
         self.lexer.add('SUB', r'\-')
+        self.lexer.add('MUL', r'\*')
+        self.lexer.add('DIV', r'/')
         self.lexer.add('CLOSE_PAREN', r'\)')
         self.lexer.add('SEMI_COLON', r'\;')
 
