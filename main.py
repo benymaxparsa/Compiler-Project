@@ -1,4 +1,4 @@
-from lexer import Lexer
+from scanner import Lexer
 from my_parser import Parser
 
 if __name__ == '__main__':
