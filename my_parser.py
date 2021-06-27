@@ -7,7 +7,7 @@ class Parser:
     def __init__(self):
         self.parser_generator = ParserGenerator(
             ['NUMBER', 'PRINT', 'OPEN_PAREN', 'CLOSE_PAREN', 'SEMI_COLON',
-             'DIV', 'MUL', 'SUM', 'SUB'],
+             'DIV', 'MUL', 'SUM', 'SUB', 'OPEN_BRACE', 'CLOSE_BRACE', 'IF'],
             precedence=[
                 ('left', ['SUM', 'SUB']),
                 ('left', ['MUL', 'DIV'])

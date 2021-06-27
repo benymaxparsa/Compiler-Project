@@ -28,7 +28,6 @@
 First and Last Name | Student Number | Username
 --- | --- | ---
 Parsa KamaliPour | `97149081` | [Link](https://github.com/benymaxparsa)
-Mohammad Mahdi Afkhami | `97149008`  | [Link](https://github.com/mohmehdi)
 
 
 
