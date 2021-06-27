@@ -17,6 +17,9 @@ class Lexer:
         self.lexer.add('DIV', r'/')
         self.lexer.add('CLOSE_PAREN', r'\)')
         self.lexer.add('SEMI_COLON', r'\;')
+        self.lexer.add('OPEN_BRACE', r'\{')
+        self.lexer.add('CLOSE_BRACE', r'\}')
+        self.lexer.add('IF', r'if')
 
     def get_lexer(self):
         self.add_tokens()
