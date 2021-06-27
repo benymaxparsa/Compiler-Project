@@ -26,13 +26,24 @@ class CodeGen:
         self.engine = engine
 
     def _declare_print_function(self):
-        pass
-    
+        voidptr_ty = ir.IntType(8).as_pointer()
+        printf_ty = ir.FunctionType(ir.IntType(32), [voidptr_ty], var_arg=True)
+        printf = ir.Function(self.module, printf_ty, name="printf")
+        self.print = printf
+
     def _compile_ir(self):
-        pass
+        self.builder.ret_void()
+        llvm_ir = str(self.module)
+        mod = self.binding.parse_assembly(llvm_ir)
+        mod.verify()
+        self.engine.add_module(mod)
+        self.engine.finalize_object()
+        self.engine.run_static_constructors()
+        return mod
 
     def _create_ir(self):
-        pass
+        self._compile_ir()
 
     def save_ir(self, filename):
-        pass
+        with open(filename, 'w') as output_file:
+            output_file.write(str(self.module))
