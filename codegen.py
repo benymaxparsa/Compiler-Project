@@ -41,7 +41,7 @@ class CodeGen:
         self.engine.run_static_constructors()
         return mod
 
-    def _create_ir(self):
+    def create_ir(self):
         self._compile_ir()
 
     def save_ir(self, filename):
