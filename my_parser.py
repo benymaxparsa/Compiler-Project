@@ -4,7 +4,7 @@ from abstract_syntax_tree import Number, Sub, Sum, Div, Mul, Print
 
 
 class Parser:
-    def __init__(self):
+    def __init__(self, module, builder, printf):
         self.parser_generator = ParserGenerator(
             ['NUMBER', 'PRINT', 'OPEN_PAREN', 'CLOSE_PAREN', 'SEMI_COLON',
              'DIV', 'MUL', 'SUM', 'SUB', 'OPEN_BRACE', 'CLOSE_BRACE', 'IF'],
@@ -13,11 +13,14 @@ class Parser:
                 ('left', ['MUL', 'DIV'])
                         ]
         )
+        self.module = module
+        self.builder = builder
+        self.printf = printf
 
     def parse(self):
         @self.parser_generator.production('program : PRINT OPEN_PAREN expression CLOSE_PAREN SEMI_COLON')
         def program(production):
-            return Print(production[2])
+            return Print(self.builder, self.module, self.printf, production[2])
 
         @self.parser_generator.production('expression : expression SUM expression')
         @self.parser_generator.production('expression : expression SUB expression')
@@ -29,17 +32,17 @@ class Parser:
             right = production[2]
 
             if operator.gettokentype() == 'SUM':
-                return Sum(left, right)
+                return Sum(self.builder, self.module, left, right)
             elif operator.gettokentype() == 'SUB':
-                return Sub(left, right)
+                return Sub(self.builder, self.module, left, right)
             elif operator.gettokentype() == 'MUL':
-                return Mul(left, right)
+                return Mul(self.builder, self.module, left, right)
             elif operator.gettokentype() == 'DIV':
-                return Div(left, right)
+                return Div(self.builder, self.module, left, right)
 
         @self.parser_generator.production('expression : NUMBER')
         def number(production):
-            return Number(production[0].value)
+            return Number(self.builder, self.module, production[0].value)
 
         @self.parser_generator.error
         def error_handle(token):
