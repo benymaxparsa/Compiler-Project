@@ -9,9 +9,9 @@ class Parser:
             ['PI', 'FLOAT', 'INTEGER', 'STRING', 'BOOLEAN',
              'SUM', 'SUB', 'MUL', 'DIV', 'AND', 'OR',
              '==', '!=', '<=', '>=', '>', '<', '=',
-             'IF', 'ELSE', ';', ',', '(', ')', '{', '}',
+             'IF', 'ELSE', 'FOR', ';', ',', '(', ')', '{', '}',
              'INPUT', 'FUNCTION', 'PRINT', 'ABSOLUTE',
-             'POWER', 'SIN', 'COS', 'VAR', 'IDENTIFIER'],
+             'POWER', 'SIN', 'COS', 'DOT', 'CROSS',  'VAR', 'IDENTIFIER'],
             precedence=[
                 ('left', ['SUM', 'SUB']),
                 ('left', ['MUL', 'DIV']),

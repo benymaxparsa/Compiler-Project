@@ -31,6 +31,7 @@ class Lexer:
         # statement
         self.lexer.add('IF', r'if(?!\w)')
         self.lexer.add('ELSE', r'else(?!\w)')
+        self.lexer.add('FOR', r'for(?!\w)')
         # punctuation
         self.lexer.add(';', r'\;')
         self.lexer.add(',', r'\,')
@@ -46,6 +47,8 @@ class Lexer:
         self.lexer.add('POWER', r'Pow')
         self.lexer.add('SIN', r'Sin')
         self.lexer.add('COS', r'Cos')
+        self.lexer.add('DOT', r'Dot')
+        self.lexer.add('CROSS', r'Cross')
         # assigner
         self.lexer.add('VAR', r'var(?!\w)')
         self.lexer.add('IDENTIFIER', "[a-zA-Z_][a-zA-Z0-9_]*")
