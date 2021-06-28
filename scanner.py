@@ -7,19 +7,50 @@ class Lexer:
         self.lexer = LexerGenerator()
 
     def add_tokens(self):
-        self.lexer.add('PRINT', r'Print')
-        self.lexer.add('OPEN_PAREN', r'\(')
-        self.lexer.add('NUMBER', r'\d+')
-        self.lexer.ignore('\s+')
+        # const and data types
+        self.lexer.add('PI', r'-?__PI__')
+        self.lexer.add('FLOAT', r'-?\d+\.\d+')
+        self.lexer.add('INTEGER', r'-?\d+')
+        self.lexer.add('STRING', r'(".*")')
+        self.lexer.add('BOOLEAN', r'true(?!\w)|false(?!\w)')
+        # math Operators
         self.lexer.add('SUM', r'\+')
         self.lexer.add('SUB', r'\-')
         self.lexer.add('MUL', r'\*')
-        self.lexer.add('DIV', r'/')
-        self.lexer.add('CLOSE_PAREN', r'\)')
-        self.lexer.add('SEMI_COLON', r'\;')
-        self.lexer.add('OPEN_BRACE', r'\{')
-        self.lexer.add('CLOSE_BRACE', r'\}')
-        self.lexer.add('IF', r'if')
+        self.lexer.add('DIV', r'\/')
+        # binary operators
+        self.lexer.add('AND', r'and(?!\w)')
+        self.lexer.add('OR', r'or(?!\w)')
+        self.lexer.add('==', r'\=\=')
+        self.lexer.add('!=', r'\!\=')
+        self.lexer.add('<=', r'\<\=')
+        self.lexer.add('>=', r'\>\=')
+        self.lexer.add('>', r'\>')
+        self.lexer.add('<', r'\<')
+        self.lexer.add('=', r'\=')
+        # statement
+        self.lexer.add('IF', r'if(?!\w)')
+        self.lexer.add('ELSE', r'else(?!\w)')
+        # punctuation
+        self.lexer.add(';', r'\;')
+        self.lexer.add(',', r'\,')
+        self.lexer.add('(', r'\(')
+        self.lexer.add(')', r'\)')
+        self.lexer.add('{', r'\{')
+        self.lexer.add(')', r'\}')
+        # functions
+        self.lexer.add('INPUT', r'Input')
+        self.lexer.add('FUNCTION', r'Function')
+        self.lexer.add('PRINT', r'Print')
+        self.lexer.add('ABSOLUTE', r'Abs')
+        self.lexer.add('POWER', r'Pow')
+        self.lexer.add('SIN', r'Sin')
+        self.lexer.add('COS', r'Cos')
+        # assigner
+        self.lexer.add('VAR', r'var(?!\w)')
+        self.lexer.add('IDENTIFIER', "[a-zA-Z_][a-zA-Z0-9_]*")
+        # ignore white spaces
+        self.lexer.ignore('\s+')
 
     def get_lexer(self):
         self.add_tokens()
