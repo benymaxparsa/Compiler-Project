@@ -6,11 +6,22 @@ from abstract_syntax_tree import Number, Sub, Sum, Div, Mul, Print
 class Parser:
     def __init__(self, module, builder, printf):
         self.parser_generator = ParserGenerator(
-            ['NUMBER', 'PRINT', 'OPEN_PAREN', 'CLOSE_PAREN', 'SEMI_COLON',
-             'DIV', 'MUL', 'SUM', 'SUB', 'OPEN_BRACE', 'CLOSE_BRACE', 'IF'],
+            ['PI', 'FLOAT', 'INTEGER', 'STRING', 'BOOLEAN',
+             'SUM', 'SUB', 'MUL', 'DIV', 'AND', 'OR',
+             '==', '!=', '<=', '>=', '>', '<', '=',
+             'IF', 'ELSE', ';', ',', '(', ')', '{', '}',
+             'INPUT', 'FUNCTION', 'PRINT', 'ABSOLUTE',
+             'POWER', 'SIN', 'COS', 'VAR', 'IDENTIFIER'],
             precedence=[
                 ('left', ['SUM', 'SUB']),
-                ('left', ['MUL', 'DIV'])
+                ('left', ['MUL', 'DIV']),
+                ('left', ['FUNCTION']),
+                ('left', ['VAR']),
+                ('left', ['=']),
+                ('left', ['IF', 'ELSE', ';']),
+                ('left', ['AND', 'OR']),
+                ('left', ['==', '!=', '>=', '>', '<', '<=']),
+                ('left', ['STRING', 'INTEGER', 'FLOAT', 'BOOLEAN', 'PI'])
                         ]
         )
         self.module = module

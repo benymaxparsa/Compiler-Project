@@ -37,7 +37,7 @@ class Lexer:
         self.lexer.add('(', r'\(')
         self.lexer.add(')', r'\)')
         self.lexer.add('{', r'\{')
-        self.lexer.add(')', r'\}')
+        self.lexer.add('}', r'\}')
         # functions
         self.lexer.add('INPUT', r'Input')
         self.lexer.add('FUNCTION', r'Function')
