@@ -19,7 +19,103 @@
   <p align="center">
     Compiler Project for Principles of Compiler Design course
     <br />
+     A Python-based compiler, using RPLY, for my own made-up language
+    <br />
     (Spring 2021)
+<br />
+
+ 
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#how-it-works">How it Works</a></li>
+    <li><a href="#testing-and-screenshots">Testing and Screenshots</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
+
+
+
+<!-- ABOUT THE PROJECT -->
+## About The Project
+
+//TODO
+
+
+### Built With
+
+
+* [Python](https://www.python.org)
+* [RPLY](https://rply.readthedocs.io/en/latest)
+* [PyCharm](https://www.jetbrains.com/pycharm)
+* [llvmlite](https://llvmlite.readthedocs.io/en/latest)
+
+
+
+<!-- GETTING STARTED -->
+## Getting Started
+
+To get a local copy up and running follow these simple example steps.
+
+### Prerequisites
+
+* Python 3, An IDE 
+
+* RPLY, llvmlite libraries installed
+
+* Git
+
+### Installation
+
+1. Clone the repo
+ ```sh
+   git clone https://github.com/benymaxparsa/Compiler-Project.git
+ ``` 
+2. Write the code in input.nullr
+3. Run the code :) 
+
+
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+//TODO
+
+  
+## How it Works
+  
+  //TODO
+  
+  
+  
+## Testing and Screenshots  
+  //TODO 
+  
+  ### Screenshots:  
+    //TODO
+  
+  
+  
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
 
 
 
